@@ -1,3 +1,32 @@
+0. paulhueman homepage url&figzam url
+   https://paulhueman.co.kr/ko/
+   https://www.figma.com/file/if9jyRTFdC84F42hnjoPVV/%ED%8F%B4-%ED%9C%B4%EB%A8%BC-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EA%B8%B0%ED%9A%8D-2023?type=whiteboard&node-id=0%3A1&t=na6FbWcN9BvWiBMJ-1
+
+   - 1차 프로젝트 리스트(필수)
+     메인페이지(index) 10/26 html(react)~
+     로그인(login) 11/9
+     회원가입(join) 11/9~11/16 기간완성 (api-주소검색, 자동등록방지) 11/23
+     SHOP - SUNGLASSES 리스트 페이지
+     상품상세 페이지 11/30 ~ 12/7
+
+   - 2차 프로젝트리스트(선택)
+     ...
+
+<폰트어썸 설치하고 연결하는 방법>
+
+$ npm i @fortawesome/fontawesome-svg-core
+$ npm i @fortawesome/free-solid-svg-icons @fortawesome/free-regular-svg-icons @fortawesome/free-brands-svg-icons
+$ npm i @fortawesome/react-fontawesome
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import logo from'./images/logo.png';
+import cart from './images/ico_basket.png';
+
+<button type='button' id="search_btn"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
