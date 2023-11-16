@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import logo from '../images/logo.png';
 import cart from '../images/ico_basket.png';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -25,9 +26,9 @@ function Header() {
             <div className="my_list">
               <a href="#">my account</a>
               <a href="#">orders</a>
-              <a href="#" className="login">
+              <Link to={'/Login'} className="login">
                 login
-              </a>
+              </Link>
             </div>
           </div>
           <button type="button" id="cart">
@@ -74,7 +75,9 @@ function Header() {
               </li>
             </ul>
           </li>
-          <li><a href="#">stockists</a></li>
+          <li>
+            <a href="#">stockists</a>
+          </li>
         </ul>
       </nav>
     </header>

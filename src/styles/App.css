@@ -1,4 +1,4 @@
-header{
+header {
   position: fixed;
   left: 0;
   top: 0;
@@ -8,7 +8,7 @@ header{
   /* background-color: aqua; */
   text-transform: uppercase;
 }
-header .top{
+header .top {
   padding: 0 25px;
   height: 110px;
   display: flex;
@@ -16,87 +16,93 @@ header .top{
   align-items: center;
   position: relative;
 }
-header .top > h1{
+header .top > h1 {
   position: absolute;
-  left:50%;
+  left: 50%;
   transform: translateX(-50%);
 }
-header .top .right_box{display: flex;}
-header .top #cart{margin: 0 12px; background: none;}
-header .top #cart img{
+header .top .right_box {
+  display: flex;
+}
+header .top #cart {
+  margin: 0 12px;
+  background: none;
+}
+header .top #cart img {
   width: 16px;
 }
-header .top #search_f input{
+header .top #search_f input {
   background: none;
   border-bottom: 2px solid #111;
 }
-header .top #search_f input::placeholder{
+header .top #search_f input::placeholder {
   font-size: 0.85rem;
   padding: 4px;
 }
-header .top #search_f #search_btn{
-   background: none;
-   padding-left: 10px;
+header .top #search_f #search_btn {
+  background: none;
+  padding-left: 10px;
 }
-
 
 /* skip */
-.global_list, .my_list{display: none !important;}
+/* .global_list, .my_list{display: none !important;} */
 header .top .global_list h1,
-header .top .right_box .my_page h2{
+header .top .right_box .my_page h2 {
   cursor: pointer;
 }
-header .top .global_list{position: absolute;}
-header .top .global_list a{
+header .top .global_list {
+  position: absolute;
+}
+header .top .global_list a {
   display: block;
   line-height: 15px;
   text-align: center;
   width: 150px;
   margin: 10px 0 0;
 }
-header .top .right_box .my_list{
-   position: absolute;
-   background: #555;
-   padding: 10px;
-   border-radius: 5px;
-   display: flex;
-   flex-flow: column nowrap;
-   /* bottom: -30px; */
-   width: 170px;
-   top:30px;
+header .top .right_box .my_list {
+  position: absolute;
+  background: #555;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column nowrap;
+  /* bottom: -30px; */
+  width: 170px;
+  top: 30px;
 }
-header .top .right_box .my_page{
+header .top .right_box .my_page {
   position: relative;
 }
-header .top .right_box .my_list a{
+header .top .right_box .my_list a {
   color: #fff;
   font-size: 0.9rem;
   margin-bottom: 10px;
 }
-header .top .right_box .my_list .login{
-   border: 1px solid #fff;
-   padding: 5px;
-   text-align: center;
-   margin-bottom: 0;
+header .top .right_box .my_list .login {
+  border: 1px solid #fff;
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 0;
 }
 
-header nav{
+header nav {
   height: 48px;
   /* background-color: lime; */
   text-align: center;
 }
-header nav .gnb{
+header nav .gnb {
   display: inline-flex;
 }
-header nav .gnb > li{
+header nav .gnb > li {
   position: relative;
   margin-right: 100px;
 }
-header nav .gnb > li > a{
+header nav .gnb > li > a {
   display: block;
   line-height: 48px;
 }
-header nav .gnb > li > a:hover::after{
+header nav .gnb > li > a:hover::after {
   content: '';
   display: block;
   background: #222;
@@ -105,7 +111,7 @@ header nav .gnb > li > a:hover::after{
   position: absolute;
   bottom: 1px;
 }
-header nav .gnb > li .sub{
+header nav .gnb > li .sub {
   position: absolute;
   display: none;
   /* background-color: #fff; */
@@ -113,35 +119,35 @@ header nav .gnb > li .sub{
   left: 50%;
   transform: translateX(-50%);
 }
-header nav .gnb > li .sub a{
+header nav .gnb > li .sub a {
   display: block;
   line-height: 40px;
 }
 
 /* footer */
-footer{
+footer {
   height: 127px;
   background: #222;
-  color:#aaa;
+  color: #aaa;
   padding: 20px;
   position: relative;
 }
-footer p{
+footer p {
   line-height: 1.5;
   font-size: 0.75rem;
   margin-bottom: 30px;
 }
-footer .menu a{
-  color:#aaa;
+footer .menu a {
+  color: #aaa;
   margin-right: 20px;
   text-transform: uppercase;
   font-size: 0.75rem;
 }
-footer .ico{
+footer .ico {
   position: absolute;
   right: 20px;
   bottom: 20px;
 }
-footer .ico a{
+footer .ico a {
   margin-left: 10px;
 }
