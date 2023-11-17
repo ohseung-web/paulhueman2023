@@ -1,0 +1,16 @@
+.container {
+  height: 100vh;
+  padding: 200px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container p {
+  display: block;
+  width: 500px;
+  height: 500px;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 500px;
+}

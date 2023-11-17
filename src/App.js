@@ -4,17 +4,24 @@ import Header from './compoent/Header.js';
 import Footer from './compoent/Footer.js';
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import Login from './Login';
+import Join from './Join';
+import Home from './Home';
 
 function App() {
   return (
     <Router>
       <Header />
-      <Routes>
+      <main>
+        <Routes>
+          <Route exact path={'/'} element={<Home />} />
+        </Routes>
+        <Routes>
           <Route path={'/Login'} element={<Login />} />
         </Routes>
-      <main>
-        <div className="bg"></div>
-        {/* <Link to={'/Login'}>test</Link> */}
+        <Routes>
+          <Route path={'/Join'} element={<Join />} />
+        </Routes>
+        {/* <div className="bg"></div> */}
       </main>
       <Footer />
     </Router>

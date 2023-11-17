@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import logo from '../images/logo.png';
 import cart from '../images/ico_basket.png';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header() {
   return (
@@ -16,9 +16,9 @@ function Header() {
           </div>
         </div>
         <h1>
-          <a href="#">
+          <Link to={'/'}>
             <img src={logo} alt="paulhumen" />
-          </a>
+          </Link>
         </h1>
         <div className="right_box">
           <div className="my_page">

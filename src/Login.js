@@ -1,4 +1,5 @@
 import './styles/Login.css';
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
@@ -14,9 +15,9 @@ function Login() {
               <button type="submit" id="login_btn">
                 로그인
               </button>
-              <a href="#" id="join">
+              <Link to={'/Join'} id="join">
                 회원가입
-              </a>
+              </Link>
             </span>
           </fieldset>
         </form>
