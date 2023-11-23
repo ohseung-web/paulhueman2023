@@ -25,6 +25,14 @@ import cart from './images/ico_basket.png';
 
 <button type='button' id="search_btn"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
 
+2023년 11월 23일 주소 우편번호 찾는 API 연결하기
+
+1. npm install react-daum-postcode 설치한다.
+2. 사용 방법
+   - api를 실행할 컴포넌트
+   - 주소를 넣어줄 text와 팝업을 띄울 button
+   - 필요한 event handler
+
 ---
 
 # Getting Started with Create React App

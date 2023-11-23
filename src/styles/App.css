@@ -43,7 +43,11 @@ header .top #search_f #search_btn {
   background: none;
   padding-left: 10px;
 }
-
+/* 승현 추가 코드 */
+header .top .changeHeader {
+  background: #222;
+  color: #fff;
+}
 /* skip */
 /* .global_list, .my_list{display: none !important;} */
 header .top .global_list h1,

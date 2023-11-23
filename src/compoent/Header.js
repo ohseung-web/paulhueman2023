@@ -26,9 +26,17 @@ function Header() {
             <div className="my_list">
               <a href="#">my account</a>
               <a href="#">orders</a>
-              <Link to={'/Login'} className="login">
+              {/* <Link to={'/Login'} className="login">
                 login
-              </Link>
+              </Link> */}
+              <NavLink
+                to={'/Login'}
+                className={({ isActive }) => {
+                  return isActive ? 'changeHeader' : 'login';
+                }}
+              >
+                login
+              </NavLink>
             </div>
           </div>
           <button type="button" id="cart">
