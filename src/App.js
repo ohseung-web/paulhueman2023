@@ -12,6 +12,7 @@ import {
 import Login from './Login';
 import Join from './Join';
 import Home from './Home';
+import Postcode from './Postcode';
 
 function App() {
   return (
