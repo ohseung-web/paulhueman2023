@@ -4,22 +4,29 @@ import Modal from 'react-modal';
 import { useState } from 'react';
 
 const Postcode = () => {
-  const [zipCode, setZipcode] = useState('');
-  const [roadAddress, setRoadAddress] = useState('');
-  const [detailAddress, setDetailAddress] = useState(''); // 추가
-  const [isOpen, setIsOpen] = useState(false); //추가
+  // useState는 자바스크립트의 let a=0와 같다
+  // 단 useState [변수명, 변경할 변수명] = useState(false);
+  // 변경할변수명{true}
+  // useState기본 초기값 문자 : useState('')
+  // useState기본 초기값 숫자 : useState(0)
+  // useState기본 초기값 boolean : useState(false)
+
+  const [zipCode, setZipcode] = useState(''); //국가기초구역번호. 2015년 8월 1일부터 시행될 새 우편번호.
+  const [Address, setAddress] = useState(''); // 주소
+  const [isOpen, setIsOpen] = useState(false); //검색버튼 누르기 전
+  //const [isclose, setIsClose] = useState('');
 
   const completeHandler = (data) => {
     // 우편번호 검색 도로명 또는 지역명으로 입력
     let addr = '';
     if (data.userSelectedType === 'R') {
-      addr = data.roadAddress;
+      addr = data.roadAddress; //도로명 주소
     } else {
-      addr = data.jibunAddress;
+      addr = data.jibunAddress; //지역명 주소
     }
     setZipcode(data.zonecode);
-    setRoadAddress(addr);
-    setIsOpen(false); //추가
+    setAddress(addr);
+    setIsOpen(false);
   };
 
   // Modal 스타일
@@ -36,44 +43,56 @@ const Postcode = () => {
       overflow: 'hidden',
     },
   };
-
+  const modalClose = {
+    overlay: {
+      display: 'none',
+    },
+  };
   // 검색 클릭
   const toggle = () => {
     setIsOpen(!isOpen);
   };
 
-  // 상세 주소검색 event
-  const changeHandler = (e) => {
-    setDetailAddress(e.target.value);
-  };
-
-  // 추가
-  const clickHandler = () => {
-    if (detailAddress === '') {
-      alert('상세주소를 입력해주세요.');
-    } else {
-      console.log(zipCode, roadAddress, detailAddress);
-    }
-  };
+  // //모달 종료
+  // const toggle2 = () => {
+  //   setClose(!close);
+  // };
 
   return (
     <div>
-      <input value={zipCode} readOnly placeholder="우편번호" />
-      <button onClick={toggle}>우편번호 검색</button>
-      <br />
-      <input value={roadAddress} readOnly placeholder="도로명 주소" />
-      <br />
-      <Modal isOpen={isOpen} ariaHideApp={false} style={customStyles}>
-        <DaumPostcode onComplete={completeHandler} height="100%" />
-      </Modal>
       <input
         type="text"
-        onChange={changeHandler}
-        value={detailAddress}
-        placeholder="상세주소"
+        value={zipCode}
+        readOnly
+        placeholder="우편번호"
+        name="post"
+        id="post"
+      />
+      <button type="button" onClick={toggle} id="userAddSearch">
+        우편번호 검색
+      </button>
+      <br />
+      <input
+        type="text"
+        value={Address}
+        readOnly
+        placeholder="도로명 주소"
+        name="userAddress"
+        id="userAddress"
+      />
+      <input
+        type="text"
+        placeholder="상세 주소"
+        name="detailAddress"
+        id="detailAddress"
       />
       <br />
-      <button onClick={clickHandler}>클릭</button>
+      <Modal isOpen={isOpen} ariaHideApp={true} style={customStyles}>
+        <button type="button" onClick={() => setIsOpen(false)} id="modalClaose">
+          닫기
+        </button>
+        <DaumPostcode onComplete={completeHandler} height="100%" />
+      </Modal>
     </div>
   );
 };

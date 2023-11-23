@@ -19,18 +19,11 @@ function App() {
     <Router>
       <Header />
       <main>
-        <switch>
-          <Routes>
-            <Route exact path={'/'} element={<Home />} />
-          </Routes>
-          <Routes>
-            <Route path={'/Login'} element={<Login />} />
-          </Routes>
-          <Routes>
-            <Route path={'/Join'} element={<Join />} />
-          </Routes>
-          {/* <div className="bg"></div> */}
-        </switch>
+        <Routes>
+          <Route exact path={'/'} element={<Home />} />
+          <Route path={'/Login'} element={<Login />} />
+          <Route path={'/Join'} element={<Join />} />
+        </Routes>
       </main>
       <Footer />
     </Router>
