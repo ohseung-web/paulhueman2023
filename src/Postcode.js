@@ -14,7 +14,6 @@ const Postcode = () => {
   const [zipCode, setZipcode] = useState(''); //국가기초구역번호. 2015년 8월 1일부터 시행될 새 우편번호.
   const [Address, setAddress] = useState(''); // 주소
   const [isOpen, setIsOpen] = useState(false); //검색버튼 누르기 전
-  //const [isclose, setIsClose] = useState('');
 
   const completeHandler = (data) => {
     // 우편번호 검색 도로명 또는 지역명으로 입력
@@ -43,20 +42,11 @@ const Postcode = () => {
       overflow: 'hidden',
     },
   };
-  const modalClose = {
-    overlay: {
-      display: 'none',
-    },
-  };
+
   // 검색 클릭
   const toggle = () => {
     setIsOpen(!isOpen);
   };
-
-  // //모달 종료
-  // const toggle2 = () => {
-  //   setClose(!close);
-  // };
 
   return (
     <div>
@@ -87,10 +77,16 @@ const Postcode = () => {
         id="detailAddress"
       />
       <br />
-      <Modal isOpen={isOpen} ariaHideApp={true} style={customStyles}>
-        <button type="button" onClick={() => setIsOpen(false)} id="modalClaose">
+      <Modal
+        isOpen={isOpen}
+        ariaHideApp={true}
+        style={customStyles}
+        onRequestClose={() => setIsOpen(false)}
+      >
+        {/* 리액트의 Modal 라이브러리 사용시 overlay를 클릭하면 창이 close되게 할 때 onRquestClose={()=>setIsOpne(false)}를 사용한다. */}
+        {/* <button type="button" onClick={() => setIsOpen(false)} id="modalClaose">
           닫기
-        </button>
+        </button> */}
         <DaumPostcode onComplete={completeHandler} height="100%" />
       </Modal>
     </div>
