@@ -1,25 +1,37 @@
+/* header 서브페이지용 */
+header .top_sub {
+  background: #222;
+}
+header .top_sub {
+  color: #fff !important;
+}
+header .nav_sub {
+  border-bottom: 1px solid #aaa;
+}
+/* header main용 */
 header {
   position: fixed;
   left: 0;
   top: 0;
   z-index: 999;
   width: 100%;
-  height: 158px;
+
   /* background-color: aqua; */
   text-transform: uppercase;
 }
 header .top {
   padding: 0 25px;
-  height: 110px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
 }
-header .top > h1 {
-  position: absolute;
+header h1 {
+  /* position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); */
+  text-align: center;
 }
 header .top .right_box {
   display: flex;
@@ -94,6 +106,7 @@ header nav {
   height: 48px;
   /* background-color: lime; */
   text-align: center;
+  padding-top: 30px;
 }
 header nav .gnb {
   display: inline-flex;

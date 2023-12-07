@@ -3,8 +3,11 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import logo from '../images/logo.png';
 import cart from '../images/ico_basket.png';
 import { Link, NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
 function Header() {
+  const [isAllVaild, setIsAllVaild] = useState(false);
+
   return (
     <header>
       <div className="top">
@@ -15,11 +18,6 @@ function Header() {
             <a href="#">chn</a>
           </div>
         </div>
-        <h1>
-          <Link to={'/'}>
-            <img src={logo} alt="paulhumen" />
-          </Link>
-        </h1>
         <div className="right_box">
           <div className="my_page">
             <h2>마이페이지</h2>
@@ -32,7 +30,7 @@ function Header() {
               {/* <NavLink
                 to={'/Login'}
                 className={({ isActive }) => {
-                  return isActive ? 'changeHeader' : 'login';
+                  return isActive ? header.classList.add('change') : 'login';
                 }}
               >
                 login
@@ -50,10 +48,15 @@ function Header() {
           </form>
         </div>
       </div>
+      <h1>
+        <Link to={'/'}>
+          <img src={logo} alt="paulhumen" />
+        </Link>
+      </h1>
       <nav>
         <ul className="gnb">
           <li>
-            <a href="#">shop</a>
+            <Link to={'/Shop'}>shop</Link>
             <ul className="sub">
               <li>
                 <a href="#">sunglasses</a>

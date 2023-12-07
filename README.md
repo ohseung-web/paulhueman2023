@@ -35,6 +35,20 @@ https://postcode.map.daum.net/guide : 우편번호 찾기 daum 사이트
 
 ---
 
+2023년 12월 7일 깃허브에 이미지 올리는 법
+
+1. 레파지토리 하나 생성
+2. Add files -> Upload files -> 이미지 파일 일일이 드래그하여 업로드 한다.
+3. README.md 를 클릭 -> 오른쪽 끝에 연필모양 아이콘 클릭
+   => <img src="https://github.com/ohseung-web/img/blob/main/origin_0.png">
+   형식으로 업로드 한다.
+4. commit changes 버튼 클릭 하면 Readme.md에 이미지가 보인다.
+5. Readme.md의 이미지 위에서 이미지 주소 복사
+   https://github.com/ohseung-web/img/raw/main/origin_1.png
+   위와 같이 가져다 사용한다.
+
+========================================================================
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
