@@ -31,15 +31,16 @@ const Postcode = () => {
   // Modal 스타일
   const customStyles = {
     overlay: {
-      backgroundColor: 'rgba(0,0,0,0.5)',
+      backgroundColor: 'rgba(0,0,0,0)',
     },
     content: {
       left: '0',
       margin: 'auto',
-      width: '500px',
-      height: '600px',
+      width: '400px',
+      height: '500px',
       padding: '0',
       overflow: 'hidden',
+      border: '3px solid #111',
     },
   };
 

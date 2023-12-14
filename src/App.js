@@ -17,25 +17,9 @@ import { useState } from 'react';
 import Shop from './Shop.js';
 
 function App() {
-  const [isAllVaild, setIsAllVaild] = useState(false);
-  const [currentRoute, setCurrent] = useState('/');
-  const routeChange = (newRoute) => {
-    setCurrent(newRoute);
-  };
-
   return (
     <Router>
-      <div className="heaer_wrap">
-        {currentRoute === '/' && <Header />}
-        {currentRoute === '/Login' ? (
-          ''
-        ) : (
-          <Header className={`${isAllVaild ? '' : 'top_sub'}`} />
-        )}
-        {/* <Header className={`${isAllVaild ? '' : 'top_sub'}`} /> */}
-      </div>
-
-      {/* <Header /> */}
+      <Header />
       <main>
         <Routes>
           <Route exact path={'/'} element={<Home />} />

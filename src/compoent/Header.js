@@ -6,11 +6,31 @@ import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 function Header() {
-  const [isAllVaild, setIsAllVaild] = useState(false);
-
+  //header_top부분 배경색 변경하기 위한 변수 지정
+  const [isSwitched, setIsSwitced] = useState(false);
+  // isSwitched가 false의 부정 => true
+  const switchHandler = () => {
+    setIsSwitced(true);
+  };
+  const switchOrigin = () => {
+    setIsSwitced(false);
+  };
   return (
-    <header>
-      <div className="top">
+    <header
+      className=""
+      style={{
+        background: isSwitched ? '#fff' : 'transparent',
+        height: isSwitched ? '170px' : 'max-content',
+      }}
+    >
+      <div
+        style={{
+          background: isSwitched ? 'rgb(59,59,59)' : 'transparent',
+          color: isSwitched ? '#fff' : '#111',
+          height: isSwitched ? '40px' : '60px',
+        }}
+        className="top"
+      >
         <div className="global_s">
           <h1>global shipping</h1>
           <div className="global_list">
@@ -24,7 +44,7 @@ function Header() {
             <div className="my_list">
               <a href="#">my account</a>
               <a href="#">orders</a>
-              <Link to={'/Login'} className="login">
+              <Link to={'/Login'} className="login" onClick={switchHandler}>
                 login
               </Link>
               {/* <NavLink
@@ -37,26 +57,54 @@ function Header() {
               </NavLink> */}
             </div>
           </div>
-          <button type="button" id="cart">
+          <button
+            type="button"
+            id="cart"
+            style={{
+              filter: isSwitched ? 'invert(1)' : 'invert(0)',
+            }}
+          >
             <img src={cart} alt="장바구니" />
           </button>
           <form action="#" method="post" id="search_f">
-            <input type="text" placeholder="Search" />
-            <button type="button" id="search_btn">
+            <input
+              type="text"
+              placeholder="Search"
+              style={{
+                borderBottom: isSwitched ? '2px solid #fff' : '2px solid #111',
+                color: isSwitched ? '#fff' : '#000',
+              }}
+            />
+            <button
+              type="button"
+              id="search_btn"
+              style={{
+                filter: isSwitched ? 'invert(1)' : 'invert(0)',
+              }}
+            >
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </button>
           </form>
         </div>
       </div>
       <h1>
-        <Link to={'/'}>
+        <Link
+          to={'/'}
+          onClick={switchOrigin}
+          style={{
+            position: isSwitched ? 'relative' : 'static',
+            top: isSwitched ? '30px' : '0',
+          }}
+        >
           <img src={logo} alt="paulhumen" />
         </Link>
       </h1>
-      <nav>
+      <nav style={{ padditgTop: isSwitched ? '40xp' : '0' }}>
         <ul className="gnb">
           <li>
-            <Link to={'/Shop'}>shop</Link>
+            <Link to={'/Shop'} onClick={switchHandler}>
+              shop
+            </Link>
             <ul className="sub">
               <li>
                 <a href="#">sunglasses</a>

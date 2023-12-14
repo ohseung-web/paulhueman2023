@@ -47,6 +47,22 @@ https://postcode.map.daum.net/guide : 우편번호 찾기 daum 사이트
    https://github.com/ohseung-web/img/raw/main/origin_1.png
    위와 같이 가져다 사용한다.
 
+6. 이미지를 import하지 않고 가져다 사용하는 방법
+
+   - public 폴더에 이미지를 넣고 사용하면 매번 import를 하지 않아도 된다.
+   - 단, public에 이미지를 가지고 오면 경로설정의 오류가 출력되므로 아래  
+     리액트 사이트에서 img경로 설정 부분 복사 붙여넣기 해서 사용한다.
+   - 리액트 사이트
+     https://create-react-app.dev/docs/using-the-public-folder/
+
+     return <img src={process.env.PUBLIC_URL + '/img/logo.png'} />;
+     <img
+     src={process.env.PUBLIC_URL + '/logo192.png'}
+     width="80%"
+     />
+
+2023년 12월 15일
+
 ========================================================================
 
 # Getting Started with Create React App

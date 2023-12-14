@@ -1,0 +1,42 @@
+.shopwrap {
+  width: 1200px;
+  margin: 220px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.shopwrap aside {
+  width: 120px;
+}
+.shopwrap aside h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.shopwrap aside .menu {
+  margin: 40px 0 0 20px;
+}
+.shopwrap aside .menu a {
+  display: block;
+  line-height: 1.8;
+}
+.shopwrap section {
+  width: calc(100% - 130px);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.shopwrap section .item {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.shopwrap section .item img {
+  width: 280px;
+}
+.shopwrap section .item h4 {
+  font-weight: 600;
+}
+.shopwrap section .item p {
+  line-height: 1.5;
+}
+.shopwrap section .item p:last-child {
+  margin-top: 20px;
+}
