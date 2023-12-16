@@ -1,0 +1,24 @@
+.detailwrap {
+  width: 1200px;
+  margin: 220px auto;
+  display: flex;
+  justify-content: flex-end;
+}
+.detailwrap section {
+  width: calc(100% - 400px);
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  margin: 0;
+}
+.detailwrap section .col1,
+.detailwrap section .col2,
+.detailwrap section .col3 {
+  margin: 100px auto;
+}
+.detailwrap p {
+  font-size: 15px;
+}
+.detailwrap aside {
+  /* border: 1px solid blue; */
+  width: 180px;
+}

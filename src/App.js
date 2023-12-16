@@ -15,6 +15,7 @@ import Home from './Home';
 import Postcode from './Postcode';
 import { useState } from 'react';
 import Shop from './Shop.js';
+import Detail from './Detail.js';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path={'/Login'} element={<Login />} />
           <Route path={'/Join'} element={<Join />} />
           <Route path={'/Shop'} element={<Shop />} />
+          <Route path={'/Detail'} element={<Detail />} />
         </Routes>
       </main>
       <Footer />
