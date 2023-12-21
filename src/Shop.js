@@ -2,6 +2,8 @@ import React, { useState, useTransition } from 'react';
 import data from './data';
 import './styles/Shop.css';
 import { Link } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import Aside from './Aside';
 
 // 부모 함수
 function Shop() {
@@ -9,13 +11,14 @@ function Shop() {
 
   return (
     <div className="shopwrap">
-      <aside>
+      <Aside />
+      {/* <aside>
         <h2>SHOP</h2>
         <div className="menu">
           <a href="#">SUNGLASSES</a>
           <a href="#">GLASSES</a>
         </div>
-      </aside>
+      </aside> */}
       <section>
         {glass.map((Element, i) => {
           return <Card glass={glass[i]} i={i + 1}></Card>;
@@ -37,9 +40,10 @@ function Card(props) {
   const handlerMouseout = () => {
     setHover(false);
   };
+
   return (
     <div className="item">
-      <Link to={'/Detail'}>
+      <Link to={`/Detail/${props.glass.id}`}>
         <img
           onMouseOver={handlerMouseover}
           onMouseOut={handlerMouseout}

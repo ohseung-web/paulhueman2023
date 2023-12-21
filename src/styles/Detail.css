@@ -1,24 +1,89 @@
-.detailwrap {
-  width: 1200px;
-  margin: 220px auto;
+.shopwrap section .photo {
+  width: calc(100% - 200px);
+  text-align: center;
+}
+.shopwrap section .photo img {
+  width: 80%;
+  margin: 0 0 150px;
+}
+.shopwrap section .info {
+  width: 200px;
+}
+.shopwrap section .info h1 {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.shopwrap section .info .price {
+  font-size: 0.91rem;
+  padding: 15px 0;
+}
+.shopwrap section .info .detail_info {
+  border-bottom: 4px solid #111;
+  padding: 0 0 10px;
+  margin: 0 0 20px;
+}
+.shopwrap section .info .detail_info li {
+  line-height: 1.8;
+  font-size: 0.8rem;
+}
+.shopwrap section .info form {
+}
+.shopwrap section .info form .frm_info {
   display: flex;
-  justify-content: flex-end;
 }
-.detailwrap section {
-  width: calc(100% - 400px);
-  margin: 0 auto;
-  /* border: 1px solid red; */
-  margin: 0;
+.shopwrap section .info form .frm_info .minus,
+.shopwrap section .info form .frm_info .plus {
+  background: #eee;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #aaa;
+  font-size: 0.8rem;
 }
-.detailwrap section .col1,
-.detailwrap section .col2,
-.detailwrap section .col3 {
-  margin: 100px auto;
+.shopwrap section .info form .frm_info #num {
+  width: 17px;
+  height: 17px;
+  border: 1px solid #aaa;
+  border-left: 0;
+  border-right: 0;
+  font-size: 0.7rem;
+  text-align: center;
 }
-.detailwrap p {
-  font-size: 15px;
+
+.shopwrap section .info form .frm_info .cart {
+  padding: 0 6px;
 }
-.detailwrap aside {
-  /* border: 1px solid blue; */
-  width: 180px;
+.shopwrap section .info form .frm_info .cart img {
+  width: 16px;
 }
+.shopwrap section .info form .frm_info .like {
+}
+.shopwrap section .info form .frm_info .like img {
+  width: 16px;
+}
+.shopwrap section .info form #buy {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  background: #222;
+  color: #fff;
+  padding: 10px 0;
+}
+/* .shopwrap section .info form .color_list {
+}
+.shopwrap section .info form .color_list h2 {
+  font-weight: 400;
+  font-size: 0.91rem;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+}
+.shopwrap section .info form .color_list .list {
+  display: flex;
+  flex-flow: row wrap;
+}
+.shopwrap section .info form .color_list .list a {
+}
+.shopwrap section .info form .color_list .list a:first-child {
+  margin-right: 5px;
+}
+.shopwrap section .info form .color_list .list a img {
+} */

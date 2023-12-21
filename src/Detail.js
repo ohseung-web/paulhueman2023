@@ -1,68 +1,78 @@
 import React, { useState } from 'react';
 import './styles/Detail.css';
-import data from './data';
+import './styles/Shop.css';
+import Aside from './Aside.js';
+import cart from './images/cart.png';
+import heart from './images/heart.png';
+import data from './data.js';
+import { useParams } from 'react-router-dom';
 
 function Detail() {
-  let [detailItem, setItem] = useState(data);
-
+  let [glass] = useState(data);
+  let { id } = useParams();
   return (
-    <div className="detailwrap">
+    <div className="shopwrap">
+      <Aside />
       <section>
-        {detailItem.map((Element, i) => {
-          return (
-            <DetailCard
-              detailItem={detailItem == i ? detailItem[i] : detailItem[i + 1]}
-              i={i + 1}
-            ></DetailCard>
-          );
-        })}
+        {/* img */}
+        <div className="photo">
+          <img
+            src={process.env.PUBLIC_URL + '/img/detailImg/PHS4_' + id + '.png'}
+            alt=""
+          />
+          <img
+            src={process.env.PUBLIC_URL + '/img/detailImg/PHS42_' + id + '.png'}
+            alt=""
+          />
+          <img
+            src={process.env.PUBLIC_URL + '/img/detailImg/PHS43_' + id + '.png'}
+            alt=""
+          />
+        </div>
+        {/* 상품 상세 정보 */}
+        <aside className="info">
+          <h1>PHS-1158A Col.4</h1>
+          <p className="price">{glass[id].price}won</p>
+          <ul className="detail_info">
+            <li>LENS WIDTH : {glass[id].LENS}</li>
+            <li>NOSE BRIDGE : {glass[id].NOSE}</li>
+            <li>FRAME SIDE : {glass[id].FRAME}</li>
+            <li>MATERIAL : {glass[id].MATERIAL}</li>
+          </ul>
+          <form action="" method="post">
+            <div className="frm_info">
+              <button type="button" className="minus">
+                -
+              </button>
+              <input type="text" value="1" name="num" id="num" />
+              <button type="button" className="plus">
+                +
+              </button>
+              <a href="#" className="cart">
+                <img src={cart} alt="장바구니" />
+              </a>
+              <a href="#" className="like">
+                <img src={heart} alt="관심상품" />
+              </a>
+            </div>
+            <button type="submit" id="buy">
+              BUY NOW
+            </button>
+          </form>
+          {/* 네이버 간편구매 API 생략 */}
+          {/* <div className="color_list">
+            <h2>COLORS</h2>
+            <div className="list">
+              <a href="#">
+                <img src="" alt="PHS-1158A COl.9" />
+              </a>
+              <a href="#">
+                <img src="" alt="PHS-1158A COl.5" />
+              </a>
+            </div>
+          </div> */}
+        </aside>
       </section>
-      <aside>
-        <p>
-          PHS-1158A Col.4
-          <br />
-          260,000 won
-          <br />
-          LENS WIDTH 56
-          <br />
-          NOSE BRIDGE 21
-          <br />
-          FRAME SIDE 142
-          <br />
-          MATERIAL ACETATE
-        </p>
-      </aside>
-    </div>
-  );
-}
-
-function DetailCard(props) {
-  return (
-    <div>
-      <div className="col1">
-        <img
-          src={
-            process.env.PUBLIC_URL + '/img/detailImg/PHS4_' + props.i + '.png'
-          }
-          alt=""
-        />
-      </div>
-      <div className="col2">
-        <img
-          src={
-            process.env.PUBLIC_URL + '/img/detailImg/PHS42_' + props.i + '.png'
-          }
-          alt=""
-        />
-      </div>
-      <div className="col3">
-        <img
-          src={
-            process.env.PUBLIC_URL + '/img/detailImg/PHS43_' + props.i + '.png'
-          }
-          alt=""
-        />
-      </div>
     </div>
   );
 }
