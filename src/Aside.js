@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Aside() {
   return (
     <aside>
       <h2>SHOP</h2>
       <div className="menu">
-        <a href="#">SUNGLASSES</a>
+        <Link to={'/Shop'}>SUNGLASSES</Link>
         <a href="#">GLASSES</a>
       </div>
     </aside>

@@ -10,6 +10,19 @@ import { useParams } from 'react-router-dom';
 function Detail() {
   let [glass] = useState(data);
   let { id } = useParams();
+  const [number, setNumber] = useState(0);
+
+  // minus, plus 버튼 클릭시 숫자 증가/감소 함수
+  const handleIncrease = () => {
+    setNumber((current) => current + 1);
+  };
+  const handleDecrease = () => {
+    setNumber((current) => current - 1);
+  };
+  const handleInit = () => {
+    setNumber((current) => 0);
+  };
+
   return (
     <div className="shopwrap">
       <Aside />
@@ -32,7 +45,9 @@ function Detail() {
         {/* 상품 상세 정보 */}
         <aside className="info">
           <h1>PHS-1158A Col.4</h1>
-          <p className="price">{glass[id].price}won</p>
+          <p className="price">
+            {glass[id].price.toLocaleString(glass[id].price) + 'won'}
+          </p>
           <ul className="detail_info">
             <li>LENS WIDTH : {glass[id].LENS}</li>
             <li>NOSE BRIDGE : {glass[id].NOSE}</li>
@@ -41,11 +56,24 @@ function Detail() {
           </ul>
           <form action="" method="post">
             <div className="frm_info">
-              <button type="button" className="minus">
+              <button
+                type="button"
+                className="minus"
+                onClick={number ? handleDecrease : handleInit}
+              >
                 -
               </button>
-              <input type="text" value="1" name="num" id="num" />
-              <button type="button" className="plus">
+              {/* <input
+                type="text"
+                value="0"
+                name="num"
+                id="num"
+                onChange={(e) => setNumber(e.target.value)}
+              /> */}
+              <div id="num" value="0">
+                {number}
+              </div>
+              <button type="button" className="plus" onClick={handleIncrease}>
                 +
               </button>
               <a href="#" className="cart">
