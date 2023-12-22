@@ -10,18 +10,23 @@ import { useParams } from 'react-router-dom';
 function Detail() {
   let [glass] = useState(data);
   let { id } = useParams();
-  const [number, setNumber] = useState(0);
+  const [number, setNumber] = useState(1);
 
   // minus, plus 버튼 클릭시 숫자 증가/감소 함수
   const handleIncrease = () => {
     setNumber((current) => current + 1);
   };
   const handleDecrease = () => {
-    setNumber((current) => current - 1);
+    if (number == 1) {
+      alert('최소 구매수량 : 1 ');
+      setNumber((current) => 1);
+    } else {
+      setNumber((current) => current - 1);
+    }
   };
-  const handleInit = () => {
-    setNumber((current) => 0);
-  };
+  // const handleInit = () => {
+  //   setNumber((current) => 1);
+  // };
 
   return (
     <div className="shopwrap">
@@ -56,11 +61,7 @@ function Detail() {
           </ul>
           <form action="" method="post">
             <div className="frm_info">
-              <button
-                type="button"
-                className="minus"
-                onClick={number ? handleDecrease : handleInit}
-              >
+              <button type="button" className="minus" onClick={handleDecrease}>
                 -
               </button>
               {/* <input
@@ -70,7 +71,7 @@ function Detail() {
                 id="num"
                 onChange={(e) => setNumber(e.target.value)}
               /> */}
-              <div id="num" value="0">
+              <div id="num" value="1">
                 {number}
               </div>
               <button type="button" className="plus" onClick={handleIncrease}>
