@@ -21,7 +21,7 @@ function Shop() {
       </aside> */}
       <section>
         {glass.map((Element, i) => {
-          return <Card glass={glass[i]} i={i + 1}></Card>;
+          return <Card key={glass[i].id} glass={glass[i]} i={i + 1}></Card>;
         })}
       </section>
     </div>

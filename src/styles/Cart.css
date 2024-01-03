@@ -1,0 +1,13 @@
+.cartlist {
+  width: calc(100% - 200px);
+  height: 1000px;
+  text-align: center;
+  border: 1px solid red;
+}
+.cartlist img {
+  width: 20%;
+  margin: 200px auto;
+}
+p {
+  font-size: 17px;
+}

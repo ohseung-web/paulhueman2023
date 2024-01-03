@@ -17,6 +17,7 @@ import { useState } from 'react';
 import Shop from './Shop.js';
 import Detail from './Detail.js';
 import List from './List.js';
+import Cart from './Cart.js';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path={'/Join'} element={<Join />} />
           <Route path={'/Shop'} element={<Shop />} />
           <Route path={'/Detail/:id'} element={<Detail />} />
+          <Route path={'/Cart/:id'} element={<Cart />} />
         </Routes>
       </main>
       <Footer />

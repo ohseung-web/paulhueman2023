@@ -5,25 +5,33 @@ import Aside from './Aside.js';
 import cart from './images/cart.png';
 import heart from './images/heart.png';
 import data from './data.js';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function Detail() {
   let [glass] = useState(data);
   let { id } = useParams();
-  const [number, setNumber] = useState(1);
 
+  let [number, setNumber] = useState(1);
+  // id-1을 하는 이유는 id는 data의 key값이지만 [id]는 index값으로 변경되기때문에
+  // index 번호는 0부터 시작하기 때문이다.
+  glass[id - 1].quantity = number;
+  //console.log(id);
   // minus, plus 버튼 클릭시 숫자 증가/감소 함수
-  const handleIncrease = () => {
+  let handleIncrease = () => {
     setNumber((current) => current + 1);
+    glass[id - 1].quantity = setNumber;
   };
-  const handleDecrease = () => {
+  let handleDecrease = () => {
     if (number == 1) {
       alert('최소 구매수량 : 1 ');
       setNumber((current) => 1);
+      glass[id - 1].quantity = setNumber;
     } else {
       setNumber((current) => current - 1);
+      glass[id - 1].quantity = setNumber;
     }
   };
+
   // const handleInit = () => {
   //   setNumber((current) => 1);
   // };
@@ -51,35 +59,27 @@ function Detail() {
         <aside className="info">
           <h1>PHS-1158A Col.4</h1>
           <p className="price">
-            {glass[id].price.toLocaleString(glass[id].price) + 'won'}
+            {glass[id - 1].price.toLocaleString(glass[id - 1].price) + 'won'}
           </p>
           <ul className="detail_info">
-            <li>LENS WIDTH : {glass[id].LENS}</li>
-            <li>NOSE BRIDGE : {glass[id].NOSE}</li>
-            <li>FRAME SIDE : {glass[id].FRAME}</li>
-            <li>MATERIAL : {glass[id].MATERIAL}</li>
+            <li>LENS WIDTH : {glass[id - 1].LENS}</li>
+            <li>NOSE BRIDGE : {glass[id - 1].NOSE}</li>
+            <li>FRAME SIDE : {glass[id - 1].FRAME}</li>
+            <li>MATERIAL : {glass[id - 1].MATERIAL}</li>
           </ul>
           <form action="" method="post">
             <div className="frm_info">
               <button type="button" className="minus" onClick={handleDecrease}>
                 -
               </button>
-              {/* <input
-                type="text"
-                value="0"
-                name="num"
-                id="num"
-                onChange={(e) => setNumber(e.target.value)}
-              /> */}
-              <div id="num" value="1">
-                {number}
-              </div>
+              <div id="num">{glass[id - 1].quantity}</div>
               <button type="button" className="plus" onClick={handleIncrease}>
                 +
               </button>
-              <a href="#" className="cart">
+              <Link to={`/Cart/${id}`} className="cart">
                 <img src={cart} alt="장바구니" />
-              </a>
+              </Link>
+              {/* </a> */}
               <a href="#" className="like">
                 <img src={heart} alt="관심상품" />
               </a>
