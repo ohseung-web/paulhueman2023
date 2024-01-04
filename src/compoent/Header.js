@@ -4,8 +4,13 @@ import logo from '../images/logo.png';
 import cart from '../images/ico_basket.png';
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import data from '../data';
 
 function Header() {
+  let [glass] = useState(data);
+  let { id } = useParams();
+
   //header_top부분 배경색 변경하기 위한 변수 지정
   const [isSwitched, setIsSwitced] = useState(false);
   // isSwitched가 false의 부정 => true
@@ -57,7 +62,8 @@ function Header() {
               </NavLink> */}
             </div>
           </div>
-          <button
+          <Link
+            to={`/Cart/${glass.id}`}
             type="button"
             id="cart"
             style={{
@@ -65,7 +71,7 @@ function Header() {
             }}
           >
             <img src={cart} alt="장바구니" />
-          </button>
+          </Link>
           <form action="#" method="post" id="search_f">
             <input
               type="text"
